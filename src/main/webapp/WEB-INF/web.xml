@@ -4,6 +4,14 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
 	<display-name>Tarefas</display-name>
+	<!--
+	<jsp-config>
+		<jsp-property-group>
+			<url-pattern>/**</url-pattern>
+			<el-ignored>false</el-ignored>
+		</jsp-property-group>
+	</jsp-config>
+	-->
 
 	<servlet>
 		<servlet-name>springmvc</servlet-name>

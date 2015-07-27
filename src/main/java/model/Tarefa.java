@@ -5,13 +5,18 @@ import java.util.Calendar;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Tarefa {
 	private Long id;
 	
 	@NotNull(message="{tarefa.descricao.vazia}") 
 	@Size(min=5, message="{tarefa.descricao.pequena}")
 	private String descricao;
+	
 	private boolean finalizado;
+	
+	@DateTimeFormat(pattern="dd/MM/yyyy")
 	private Calendar dataFinalizacao;
 	
 	public Long getId() {
@@ -44,5 +49,12 @@ public class Tarefa {
 	
 	public void setDataFinalizacao(Calendar dataFinalizacao) {
 		this.dataFinalizacao = dataFinalizacao;
+	}
+
+	@Override
+	public String toString() {
+		return "Tarefa [id=" + id + ", descricao=" + descricao
+				+ ", finalizado=" + finalizado + ", dataFinalizacao="
+				+ dataFinalizacao + "]";
 	}
 }
